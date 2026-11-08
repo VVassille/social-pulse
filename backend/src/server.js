@@ -1,27 +1,22 @@
 import express from "express";
 import dotenv from "dotenv";
-import cors from "cors";
-import connectDB from "./config/db.js";
+import connectDB from "./config/db.js"; // ⚠️ Fără 'src/' la început
+import userRoutes from "./routes/userRoutes.js"; // ⚠️ Fără 'src/' la început
+import postRoutes from "./routes/postRoutes.js"; // ⚠️ Fără 'src/' la început
 
-// Загрузка переменных окружения из .env
 dotenv.config();
-
-// Подключение к базе данных MongoDB
 connectDB();
 
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(express.json()); // Позволяет серверу принимать JSON в теле запросов
+app.use(express.json());
 
-// Базовый маршрут для проверки работоспособности
-app.get("/", (req, res) => {
-  res.send("API status: social-pulse server is running...");
-});
+// Rutele aplicației
+app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running successfully on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
