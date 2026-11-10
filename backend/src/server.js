@@ -1,13 +1,17 @@
 import express from "express";
 import dotenv from "dotenv";
-import connectDB from "./config/db.js"; // ⚠️ Fără 'src/' la început
-import userRoutes from "./routes/userRoutes.js"; // ⚠️ Fără 'src/' la început
-import postRoutes from "./routes/postRoutes.js"; // ⚠️ Fără 'src/' la început
+import cors from "cors"; // 1. Importă pachetul cors
+import connectDB from "./config/db.js";
+import userRoutes from "./routes/userRoutes.js";
+import postRoutes from "./routes/postRoutes.js";
 
 dotenv.config();
 connectDB();
 
 const app = express();
+
+// 2. Activează CORS pentru a permite cererile de la frontend (Vite)
+app.use(cors());
 
 app.use(express.json());
 

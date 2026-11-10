@@ -19,15 +19,14 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-// 🔒 Criptarea parolei înainte de salvare (înregistrare sau actualizare)
-userSchema.pre("save", async function (next) {
+// 🔒 Criptarea parolei înainte de salvare (fără 'next' în funcția async)
+userSchema.pre("save", async function () {
   if (!this.isModified("password")) {
-    return next();
+    return;
   }
 
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
-  next();
 });
 
 const User = mongoose.model("User", userSchema);

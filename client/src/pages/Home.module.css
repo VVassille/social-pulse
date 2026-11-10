@@ -1,0 +1,168 @@
+/* Containerul principal al paginii Home */
+.homeContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Bara de navigare (Navbar) */
+.homeContainer nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.homeContainer nav h2 {
+  font-size: 1.25rem;
+  color: #1a73e8;
+  margin: 0;
+}
+
+.homeContainer nav span {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.homeContainer nav button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.homeContainer nav button:hover {
+  background-color: #e03131;
+}
+
+/* Mesaje de eroare */
+.errorMessage {
+  background-color: #ffe3e3;
+  color: #c92a2a;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+/* Formularul pentru crearea postării */
+.postForm {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.postForm textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.postForm textarea:focus {
+  border-color: #1a73e8;
+}
+
+.postForm button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  float: right;
+  transition: background-color 0.2s;
+}
+
+.postForm button:hover {
+  background-color: #1557b0;
+}
+
+.postForm::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Lista de postări și cardurile individuale */
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.postCard {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.postHeader strong {
+  color: #222;
+  font-size: 1.05rem;
+}
+
+.postDate {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.postText {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 15px;
+  word-break: break-word;
+}
+
+/* Butonul de ștergere pentru postările proprii */
+.deleteBtn {
+  background-color: transparent;
+  color: #e03131;
+  border: 1px solid #ffc9c9;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.deleteBtn:hover {
+  background-color: #fff5f5;
+  border-color: #e03131;
+}
